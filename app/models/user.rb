@@ -8,4 +8,8 @@ class User < ApplicationRecord
                      uniqueness: { case_sensitive: false }
   has_secure_password
   validates :password, presence: true
+
+  def self.search(query)
+    where("research LIKE ?", "%#{query}%")
+  end
 end

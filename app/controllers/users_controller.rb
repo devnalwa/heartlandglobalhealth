@@ -16,6 +16,14 @@ class UsersController < ApplicationController
     end
   end
 
+  def members
+    if params[:query]
+      @users = User.search(params[:query])
+    else
+      @users = User.all
+    end
+  end
+
   private
   def user_params
     params.require(:user).permit(:name, :email, :school, :research, :password, :password_confirmation)
