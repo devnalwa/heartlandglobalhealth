@@ -1,6 +1,9 @@
 language: ruby
 rvm:
 - 2.4.2
+script:
+- rake
+- bundle exec rspec
 deploy:
   provider: heroku
   app: heartland-global-draft
