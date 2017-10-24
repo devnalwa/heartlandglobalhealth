@@ -1,0 +1,12 @@
+language: ruby
+rvm:
+- 2.4.2
+deploy:
+  provider: heroku
+  app: heartland-global-draft
+  on: master
+  run:
+    - "rails db:migrate"
+    - restart
+  api_key:
+    secure: K3Pi/7X4PWC/m8zBI1oq9DyHCCmnV1MiRkxN0ggif+JtYaB+d/39/I1tp1bleww55p/ne4x1MSZleM6QHN8QBxA4iA/FC0sN2ww/jjm8gDQuO5QnbFLoUf8sH33inG1RfbZXO1QOup3dLoxcYC9o1iRqWLVUI8mxfjbPsN2kvApHIt1iGiROYRsv9YaZvTdG0W3cvyreB1gdyr2fqYHo2LuRT2yIIyR6Onn1B+7g8doEZ8ESoZ+KFp9qPWFTyEjZ2GQxPQ7hpls34QPufXcFbeah2BPdtRwTC0B6CqiS5Agc32vWnMripr8DGXxis+kNbxCCX4hr1bbwIJx0QatXIIMt/EUqG4Jw7zoiNUVKA4IgYSpOz6M493h2ZZmuBlzRWBpp52Ci8syLUAZEXx3sYp7WGwz83RScn/M+28A46hynuq2DJXZjFg8+PcV6/w5oXyc57gNYpCWJ0CqsYsDNiBloZSKcGnmuQZwxwls6xSETkcX1/SHEEMRCDJGdZ6WP/z4d+YwDWQeYrc4y0Aad7psw1AdLVxawCBV460dhM/eubO4k/9YEqsCy04QTnibz/I+59zcLj9QpMkwSfoW9hrrtGMtXNjAgdc8IMZEYPWlEyh7w4/RxACfPceG6s0VYOv8rOgfOnwTrYYdAaOk+N7C+2+xtFRGFN92rWq0+OLg=
