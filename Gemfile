@@ -15,7 +15,6 @@ gem 'jquery-rails',   '4.3.1'
 gem 'puma',           '3.10.0'
 gem 'sass-rails',     '5.0.6'
 gem 'sprockets-rails', '3.2.1'
-gem 'slim',           '3.0.8'
 gem 'turbolinks',     '5.0.1'
 gem 'uglifier',       '3.2.0'
 

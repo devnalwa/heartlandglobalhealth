@@ -1,0 +1,24 @@
+<% provide(:title, "Members") %>
+
+<div class="my-3">
+  <%= form_tag(members_path, :method => "get", id: "search-form") do %>
+    <div class="input-group">
+      <%= text_field_tag :query, params[:query], placeholder: "Find Researchers", class: "form-control" %>
+      <span id="input-group-btn">
+        <%= submit_tag "Search", class: "btn btn-primary" %>
+      </span>
+    </div>
+  <% end %>
+</div>
+
+<% @users.each do |user| %>
+  <div class="card">
+    <div class="card-body">
+      <h4 class="card-title"><%= user.name %></h4>
+      <h6 class="card-subtitle mb-2 text-muted"><%= user.email %></h6>
+      <p class="card-text"><%= user.school %></p>
+      <p class="card-text"><%= user.research %></p>
+      <%= link_to "#{user.name}'s page", user, class: "card-link" %>
+    </div>
+  </div>
+<% end %>
