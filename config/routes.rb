@@ -6,4 +6,5 @@ Rails.application.routes.draw do
   get '/members', to: 'users#members'
   get '/info', to: 'static_pages#conference_info'
   resources :users
+  resources :posts
 end
