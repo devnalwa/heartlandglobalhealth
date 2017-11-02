@@ -17,6 +17,7 @@ gem 'sass-rails',     '5.0.6'
 gem 'sprockets-rails', '3.2.1'
 gem 'turbolinks',     '5.0.1'
 gem 'uglifier',       '3.2.0'
+gem 'devise', '~> 4.2'
 
 group :development, :test do
   gem 'sqlite3',     '1.3.13'
