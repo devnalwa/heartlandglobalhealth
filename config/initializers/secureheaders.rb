@@ -11,7 +11,7 @@ SecureHeaders::Configuration.default do |config|
     default_src: %w(https: 'none'),
     script_src:  %w('self' cdnjs.cloudflare.com),
     style_src:   %w('self' cdnjs.cloudflare.com 'unsafe-inline'),
-    img_src:     %w('self'),
+    img_src:     %w('self' data:),
     object_src:  %w('none')
   }
 end
