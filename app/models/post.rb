@@ -9,7 +9,7 @@ class Post < ApplicationRecord
   validates :content, presence: true
 
   def sanitize_content(content)
-    allowed_tags = %w(h1 h2 h3 p strong em a br blockquote ol ul li img)
+    allowed_tags = %w(h1 h2 h3 p strong em a br blockquote ol ul li img iframe)
     allowed_attributes = %w(href src)
     ActionController::Base.helpers.sanitize(content, tags: allowed_tags, attributes: allowed_attributes)
   end
