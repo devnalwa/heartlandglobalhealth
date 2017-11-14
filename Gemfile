@@ -18,6 +18,8 @@ gem 'sprockets-rails', '3.2.1'
 gem 'turbolinks',     '5.0.1'
 gem 'uglifier',       '3.2.0'
 gem 'devise', '~> 4.2'
+gem 'rspec'
+gem 'stripe'
 
 group :development, :test do
   gem 'sqlite3',     '1.3.13'
