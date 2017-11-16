@@ -17,7 +17,9 @@
       <h4 class="card-title"><%= user.name %></h4>
       <h6 class="card-subtitle mb-2 text-muted"><%= user.email %></h6>
       <p class="card-text"><%= user.school %></p>
-      <p class="card-text"><%= user.research %></p>
+      <% user.interests.each do |interest| %>
+        <p class="card-text"><%= interest.name %></p>
+      <% end %>
       <%= link_to "#{user.name}'s page", user, class: "card-link" %>
     </div>
   </div>

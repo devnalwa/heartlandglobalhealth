@@ -21,8 +21,13 @@
     </div>
 
     <div class="form-group">
-      <%= f.label :research, "Your Research Interests" %>
-      <%= f.text_field :research, class: "form-control" %>
+      <%= f.label :interests, "Your Research Interests" %>
+      <% Interest.all_interests.each do |interest| %>
+        <p>
+          <%= interest %>
+          <%= f.check_box :interests, class: "form-control" %>
+        </p>
+      <% end %>
     </div>
 
     <div class="form-group">

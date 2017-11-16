@@ -1,2 +1,5 @@
 <% provide(:title, @user.name) %>
 <h1 class="display-4"><%= @user.name %></h1>
+<% @user.interests.each do |interest| %>
+   <h2><%= interest.name %></h2>
+<%end %>

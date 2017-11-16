@@ -7,9 +7,15 @@ class User < ApplicationRecord
                      format: { with: EMAIL_REGEX },
                      uniqueness: { case_sensitive: false }
   has_secure_password
+  
+  
   validates :password, presence: true
-
+  
+  has_many :interests
+  
   def self.search(query)
-    where("research LIKE ?", "%#{query}%")
+    puts query
+    where("name LIKE ? OR school LIKE ?", "%#{query}%", "%#{query}%")
   end
+  
 end
