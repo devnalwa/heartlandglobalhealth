@@ -18,11 +18,15 @@ gem 'secure_headers',  '5.0.1'
 gem 'sprockets-rails', '3.2.1'
 gem 'turbolinks',      '5.0.1'
 gem 'uglifier',        '3.2.0'
+gem 'devise',          '~> 4.2'
+gem 'rspec'
+gem 'stripe'
 
 group :development, :test do
   gem 'sqlite3',     '1.3.13'
   gem 'rspec-rails', '3.6.0'
   gem 'capybara',    '2.15.4'
+  gem 'factory_bot_rails'
   gem 'byebug',      '9.1.0', platforms: [:mri, :mingw, :x64_mingw]
 end
 
