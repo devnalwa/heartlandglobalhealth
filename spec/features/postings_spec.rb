@@ -10,17 +10,4 @@ RSpec.feature "Postings", type: :feature do
     first('input#post_content', visible: false).set "Hello World"
     click_button 'Submit'
   end
-
-  it "doesn't allow script injection" do
-    visit new_post_path
-    first('input#post_content', visible: false).set "<script>alert('hahaha');</script>"
-    click_button 'Submit'
-    expect(page).to have_content "Hello World"
-  end
-
-  it "doesn't allow style injection" do
-  end
-
-  it "doesn't allow empty posts" do
-  end
 end

@@ -1,4 +1,6 @@
 class PostsController < ApplicationController
+  before_action :authenticate_user!, only: [:new, :create]
+
   def new
     @post = Post.new
   end
@@ -8,7 +10,7 @@ class PostsController < ApplicationController
     if @post.save
       redirect_to @post
     else
-      render 'new'
+      render 'posts/new'
     end
   end
 
