@@ -25,7 +25,7 @@ group :development, :test do
   gem 'sqlite3',     '1.3.13'
   gem 'rspec-rails', '3.6.0'
   gem 'capybara',    '2.15.4'
-  gem 'factory_bot_rails'
+  gem 'factory_bot_rails', '4.8.2'
   gem 'byebug',      '9.1.0', platforms: [:mri, :mingw, :x64_mingw]
 end
 
