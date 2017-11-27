@@ -14,8 +14,15 @@ RSpec.feature "Postings", type: :feature do
     fill_in 'Email',    with: @user.email
     fill_in 'Password', with: @user.password
     click_button 'Log in'
+
     visit new_post_path
     first('input#post_content', visible: false).set "Hello World"
     click_button 'Submit'
+    expect(page).to have_content "Hello World"
+  end
+
+  it "doesn't post when user is not logged in" do
+    visit new_post_path
+    expect(current_path).to eq user_session_path
   end
 end

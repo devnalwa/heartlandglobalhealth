@@ -18,6 +18,7 @@ gem 'secure_headers',  '5.0.1'
 gem 'sprockets-rails', '3.2.1'
 gem 'turbolinks',      '5.0.1'
 gem 'uglifier',        '3.2.0'
+gem 'webpacker',       '3.0.2'
 gem 'devise',          '~> 4.2'
 gem 'stripe'
 
