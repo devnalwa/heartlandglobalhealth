@@ -19,7 +19,10 @@
       </div>
     </div>
     </div>
-    <div class="posts">
+    <div class="container posts">
+      <h1>Events</h1>
+      <div><%= @post1.content.html_safe if not @post1.nil? %></div>
+      <div><%= @post2.content.html_safe if not @post2.nil? %></div>
     </div>
     <!---Youtube Content--->
     <div class="youtube">
