@@ -15,7 +15,9 @@
   <div class="card">
     <div class="card-body">
       <h4 class="card-title"><%= user.name %></h4>
-      <h6 class="card-subtitle mb-2 text-muted"><%= user.email %></h6>
+      <% if user_signed_in? %>
+        <h6 class="card-subtitle mb-2 text-muted"><%= user.email %></h6>
+      <% end %>
       <p class="card-text"><%= user.school %></p>
       <p class="card-text"><%= user.research %></p>
       <%= link_to "#{user.name}'s page", user, class: "card-link" %>
