@@ -4,8 +4,8 @@
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent">
       <span class="navbar-toggler-icon"></span>
     </button>
-      
-    <div class="d-flex justify-content-between">  
+
+    <div class="d-flex justify-content-between">
        <% if user_signed_in? %>
        <ul class="nav navbar-nav my-2 my-lg-0">
         <li><%= link_to "Log out", destroy_user_session_path, class: "" %></li>
@@ -19,7 +19,7 @@
       </ul>
       <% end %>
     </div>
-      
+
 </div>
 </nav>
 
@@ -36,6 +36,11 @@
         <li class="nav-item col-md-auto <%= 'active' if current_page?(members_path) %>">
           <%= link_to "Members", members_path, class: "nav-link" %>
         </li>
+        <% if user_signed_in? %>
+          <li class="nav-item col-md-auto <%= 'active' if current_page?(new_post_path) %>">
+            <%= link_to "Post", new_post_path, class: "nav-link" %>
+          </li>
+        <% end %>
       </ul>
 
   </div>

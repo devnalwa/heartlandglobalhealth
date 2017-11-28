@@ -114,6 +114,8 @@ GEM
     public_suffix (3.0.0)
     puma (3.10.0)
     rack (2.0.3)
+    rack-proxy (0.6.2)
+      rack
     rack-test (0.7.0)
       rack (>= 1.0, < 3)
     rails (5.1.4)
@@ -146,10 +148,6 @@ GEM
     responders (2.4.0)
       actionpack (>= 4.2.0, < 5.3)
       railties (>= 4.2.0, < 5.3)
-    rspec (3.6.0)
-      rspec-core (~> 3.6.0)
-      rspec-expectations (~> 3.6.0)
-      rspec-mocks (~> 3.6.0)
     rspec-core (3.6.0)
       rspec-support (~> 3.6.0)
     rspec-expectations (3.6.0)
@@ -179,6 +177,8 @@ GEM
       sprockets (>= 2.8, < 4.0)
       sprockets-rails (>= 2.0, < 4.0)
       tilt (>= 1.1, < 3)
+    secure_headers (5.0.1)
+      useragent (>= 0.15.0)
     spring (2.0.2)
       activesupport (>= 4.2)
     spring-watcher-listen (2.0.1)
@@ -204,6 +204,7 @@ GEM
       thread_safe (~> 0.1)
     uglifier (3.2.0)
       execjs (>= 0.3.0, < 3)
+    useragent (0.16.8)
     warden (1.2.7)
       rack (>= 1.0)
     web-console (3.5.1)
@@ -211,6 +212,10 @@ GEM
       activemodel (>= 5.0)
       bindex (>= 0.4.0)
       railties (>= 5.0)
+    webpacker (3.0.2)
+      activesupport (>= 4.2)
+      rack-proxy (>= 0.6.1)
+      railties (>= 4.2)
     websocket-driver (0.6.5)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.2)
@@ -226,16 +231,16 @@ DEPENDENCIES
   byebug (= 9.1.0)
   capybara (= 2.15.4)
   devise (~> 4.2)
-  factory_bot_rails
+  factory_bot_rails (= 4.8.2)
   jbuilder (= 2.7.0)
   jquery-rails (= 4.3.1)
   listen (= 3.1.5)
   pg (= 0.21.0)
   puma (= 3.10.0)
   rails (= 5.1.4)
-  rspec
   rspec-rails (= 3.6.0)
   sass-rails (= 5.0.6)
+  secure_headers (= 5.0.1)
   spring (= 2.0.2)
   spring-watcher-listen (= 2.0.1)
   sprockets-rails (= 3.2.1)
@@ -245,9 +250,10 @@ DEPENDENCIES
   tzinfo-data
   uglifier (= 3.2.0)
   web-console (= 3.5.1)
+  webpacker (= 3.0.2)
 
 RUBY VERSION
    ruby 2.4.2p198
 
 BUNDLED WITH
-   1.16.0
+   1.16.0.pre.2

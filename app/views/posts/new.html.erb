@@ -1,0 +1,28 @@
+<div class="container">
+  <h1 class="display-4">Share an Update</h1>
+  <link rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/quill/1.3.3/quill.snow.min.css"
+  integrity="sha384-ll51gxLwl2v0sVhAiLFXmB6cyi8D6WGFAalLmbqoUnGl166HVTnIWAw9/HtJYmPO"
+  crossorigin="anonymous">
+
+  <%= render 'shared/error_messages', object: @post %>
+
+  <div id="form-container">
+    <%= form_for(@post) do |f| %>
+      <div class="form-group">
+        <%= f.hidden_field :content, type: "hidden" %>
+        <div id="editor">
+        </div>
+      </div>
+
+      <button class="btn btn-primary" type="submit">Submit</button>
+    <% end %>
+  </div>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/quill/1.3.3/quill.min.js"
+    integrity="sha384-V1aaFt6wvlz5V6qfi1A7oMgfMxYCH3zXaZXycrVb2QI/8MOPJxmNO2vDCM9ZF1ip"
+crossorigin="anonymous">
+</script>
+<%= javascript_include_tag 'quill_control' %>
+</div>
