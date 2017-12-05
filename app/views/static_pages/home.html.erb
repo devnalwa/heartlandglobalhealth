@@ -20,9 +20,16 @@
     </div>
     </div>
     <div class="container posts">
-      <h1>Events</h1>
-      <div><%= @post1.content.html_safe if not @post1.nil? %></div>
-      <div><%= @post2.content.html_safe if not @post2.nil? %></div>
+      <div class="row post-height">
+        <div class="col-sm-12 post-text">
+          <%= @post1.content.html_safe if not @post1.nil? %>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-12 post-text">
+        <%= @post2.content.html_safe if not @post2.nil? %>
+        </div>
+      </div>
     </div>
     <!---Youtube Content--->
     <div class="youtube">

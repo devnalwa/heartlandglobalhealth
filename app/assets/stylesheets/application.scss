@@ -85,3 +85,26 @@
   height: 500px;
   width: 100%;
 }
+
+.post {
+  
+}
+
+.image-height {
+  height: 80%;
+  width: 80%;
+  margin: 20px;
+}
+
+.post-height {
+  height: 200px;
+}
+
+.post-text {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    max-width: 100%;
+    border-left:1em solid transparent;
+    border-right:1em solid transparent;
+}
