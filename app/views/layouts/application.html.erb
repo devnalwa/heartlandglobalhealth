@@ -13,6 +13,14 @@
   </head>
   <body>
     <%= render 'layouts/navigation' %>
+    <% flash.each do |name, msg| %>
+      <div class="alert alert-info alert-dismissable fade show" role="alert">
+        <button type="close" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <%= msg %>
+      </div>
+    <% end %>
     <div class="main">
       <%= yield %>
     </div>
