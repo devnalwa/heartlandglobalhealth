@@ -40,7 +40,7 @@
           <%= link_to "Events", posts_path, class: "nav-link" %>
         </li>
         <% if user_signed_in? %>
-          <li class="nav-item col-md-auto <%= 'active' if current_page?(new_post_path) %>">
+          <li data-turbolinks='false' class="nav-item col-md-auto <%= 'active' if current_page?(new_post_path) %>">
             <%= link_to "Post", new_post_path, class: "nav-link" %>
           </li>
         <% end %>

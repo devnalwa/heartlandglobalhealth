@@ -5,16 +5,14 @@ require 'rails_helper'
 # does with the extracted html). If you have some time, it would be a good idea
 # to convert these test to use the actual Quill interface
 RSpec.feature "Postings", type: :feature do
+  include Devise::Test::IntegrationHelpers
+
   before :each do
     @user = create(:user)
   end
 
   it "posts users content" do
-    visit user_session_path
-    fill_in 'Email',    with: @user.email
-    fill_in 'Password', with: @user.password
-    click_button 'Log in'
-
+    sign_in @user
     visit new_post_path
     first('input#post_content', visible: false).set "Hello World"
     click_button 'Submit'

@@ -4,5 +4,6 @@ FactoryBot.define do
     school 'grinnell'
     email 'aaa@grinnell.edu'
     password 'aaaaaa'
+    confirmed_at Date.today
   end
 end
