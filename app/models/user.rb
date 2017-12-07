@@ -6,6 +6,8 @@ class MemberEmailValidator < ActiveModel::EachValidator
     allowed_emails << /A[^@\s]+@dmu\.edu\z/i
     allowed_emails << /A[^@\s]+@drake\.edu\z/i
     allowed_emails << /A[^@\s]+@iastate\.edu\z/i
+    allowed_emails << /A[^@\s]+@mercydesmoines\.org\z/i
+    allowed_emails << /A[^@\s]+@mchs\.org\z/i
     allowed_emails << /A[^@\s]+@uiowa\.edu\z/i
     allowed_emails << /A[^@\s]+@uni\.edu\z/i
     allowed_emails << /A[^@\s]+@wmpenn\.edu\z/i
