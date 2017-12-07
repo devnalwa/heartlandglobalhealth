@@ -32,6 +32,6 @@ class User < ApplicationRecord
   validates :password, presence: true
 
   def self.search(query)
-    where("research LIKE ?", "%#{query}%")
+    where("name LIKE ? OR school LIKE ?", "%#{query}%", "%#{query}%")
   end
 end
