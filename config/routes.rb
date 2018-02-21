@@ -6,6 +6,7 @@ Rails.application.routes.draw do
     post '/signup', to: 'users#create'
     get '/members', to: 'users#members'
     get '/info', to: 'static_pages#conference_info'
+    get '/users', to: 'users#show'
 
     devise_for :users, :controllers => { :registrations => "users/registrations" }
     root 'static_pages#home'

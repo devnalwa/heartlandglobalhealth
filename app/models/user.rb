@@ -1,7 +1,7 @@
 class MemberEmailValidator < ActiveModel::EachValidator
   def validate_each(record, attribute, value)
     allowed_emails = []
-    allowed_emails << /A[^@\s]+@grinnell\.edu\z/i
+    allowed_emails << /^[A-Z0-9]+@grinnell\.edu\z/i
     allowed_emails << /A[^@\s]+@central\.edu\z/i
     allowed_emails << /A[^@\s]+@dmu\.edu\z/i
     allowed_emails << /A[^@\s]+@drake\.edu\z/i
@@ -28,7 +28,7 @@ class User < ApplicationRecord
   validates :name,   presence: true, length: { maximum: 255 }
   validates :school, presence: true, length: { maximum: 255 }
   validates :email,  presence: true, length: { maximum: 255 },
-                     format: { with: EMAIL_REGEX },
+                     format: { with: EMAIL_REGEX }, 
                      member_email: true,
                      uniqueness: { case_sensitive: false }
   validates :password, presence: true
