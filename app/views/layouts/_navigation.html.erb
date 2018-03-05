@@ -8,12 +8,13 @@
     <div class="d-flex justify-content-between">
        <% if user_signed_in? %>
        <ul class="nav navbar-nav my-2 my-lg-0be">
-        <li><%= link_to "Log out", destroy_user_session_path, class: "btn btn-outline-info mr-sm-2" %></li>
-      </ul>
-      <% else %>
-      <ul class="nav navbar-nav my-2 my-lg-0">
         <li><%= link_to "Profile", users_path, class: "btn btn-outline-info mr-sm-2" %></li>
       </ul>
+       <ul class="nav navbar-nav my-2 my-lg-0be">
+        <li><%= link_to "Log out", destroy_user_session_path, class: "btn btn-outline-info mr-sm-2" %></li>
+      </ul>
+      
+      <% else %>
       <ul class="nav navbar-nav my-2 my-lg-0">
         <li><%= link_to "Sign up", new_user_registration_path, class: "btn btn-outline-info mr-sm-2" %></li>
       </ul>
