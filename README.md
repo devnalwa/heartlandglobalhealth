@@ -16,23 +16,38 @@ How to actually run this Git Repo on your C9 Workspace.
 
 Quick Rundown of each controller and their methods: 
 
-1. Posts_Controller : 
-  new - creates a post variable
-  create- creates a post variable that if saved, will redirect you to that post, otherwise renders the 'posts/new' link
-  show - shows a post based on the id of the post that is written in the URL
-  index - shows all posts that have been created
-  post_params - requires a post (the title) but only permits content (the post can be empty as long as it has a title)
+1. Posts_Controller :
+
+    new - creates a post variable
+    
+    create- creates a post variable that if saved, will redirect you to that post, otherwise renders the 'posts/new' link
+    
+    show - shows a post based on the id of the post that is written in the URL
+    
+    index - shows all posts that have been created
+    
+    post_params - requires a post (the title) but only permits content (the post can be empty as long as it has a title)
+  
   
 2. static_pages_controller: 
-  home - creates a post1 and post2 variables. Post1 is the last post made, post2 is the second to last post made
+
+    home - creates a post1 and post2 variables. Post1 is the last post made, post2 is the second to last post made
   
-3. users_controller :
-  show - creates a user profile associated with the id in the URL
-  new - creates a user variable 
-  create - creates a new user, if it saves then it redirects to the user's page, else it renders the 'new' link
-  members - can search for a member given a :query. If search fails then we show all users
+  
+3. users_controller : 
+
+    show - creates a user profile associated with the id in the URL
+    
+    new - creates a user variable
+    
+    create - creates a new user, if it saves then it redirects to the user's page, else it renders the 'new' link
+    
+    members - can search for a member given a :query. If search fails then we show all users
+  
   
 4. Charges_controller: 
-  A controller for the payment system using stripe. I will not fill this out since we are not focuisng on this aspect of our system
+
+    A controller for the payment system using stripe. I will not fill this out since we are not focuisng on this aspect of our system
+  
   
 Minimal testing has been implemented. Basic testing that should always be passed. 
