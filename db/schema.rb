@@ -22,6 +22,7 @@ ActiveRecord::Schema.define(version: 20171202223845) do
     t.string "name"
     t.string "email", default: "", null: false
     t.string "school"
+    t.string "tags"
     t.string "research"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
