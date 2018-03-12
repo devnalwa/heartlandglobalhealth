@@ -16,7 +16,11 @@ class UsersController < ApplicationController
     #   render 'new'
     # end
   end
-
+  
+  def edit
+    @user = User.find(1)
+  end
+  
   def members
     if params[:query]
       @users = User.search(params[:query])
@@ -27,6 +31,6 @@ class UsersController < ApplicationController
 
   private
   def user_params
-    params.require(:user).permit(:name, :email, :school, :research, :password, :password_confirmation)
+    params.require(:user).permit(:name, :email, :school, :tags, :research, :password, :password_confirmation)
   end
 end

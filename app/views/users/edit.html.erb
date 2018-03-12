@@ -37,43 +37,26 @@
                         <%= @user.email %>
                     </td>
                 </tr>
-                <tr>
-                    <td>
-                        <strong>
-                            Tags
-                        </strong>
-                    </td>
-                    <td>
-                        <%= @user.research %>
-                    </td>
-                </tr>
             </tbody>
         </table>
         </div>
     </div>
 </div>
-<div class="row">
-     <div class="col">    
-        <div class="table-responsive">
-        <table class="table table-condensed table-responsive table-user-information">
-            <tbody>
-                <tr>
-                    <td>
-                    <strong>
-                        Research
-                    </strong>
-                    </td>
-                </tr>    
-                    
-                <tr>
-                    <td>
-                    This is where a paragraph should be displayed.
-                    <%= @user.research %>
-                </td>
-                </tr>
-            </tbody>
-        </table>
-        <%= button_to "Edit", action: "edit"%>
+
+<div class="container">
+    <%= form_for(@user) do |f| %>
+        <%= render 'shared/error_messages', object: @user %>
+        
+        <div class="form-group">
+          <%= f.label :tags, "Your Tags" %>
+          <%= f.text_field :research, class: "form-control" %>
         </div>
-    </div>
+        
+        <div class="for=group">
+          <%= f.label :research, "Your Research Interests" %>
+          <%= f.text_field :research, class: "form-control" %>
+        </div>
+        
+        <%= f.submit "Submit", class: "btn btn-primary" %>
+    <% end %>
 </div>

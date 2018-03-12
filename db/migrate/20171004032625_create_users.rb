@@ -4,6 +4,7 @@ class CreateUsers < ActiveRecord::Migration[5.1]
       t.string :name
       t.string :email, null: false, default: ""
       t.string :school
+      t.string :tags
       t.string :research
 
       t.timestamps
