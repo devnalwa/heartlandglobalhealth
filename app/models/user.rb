@@ -2,15 +2,15 @@ class MemberEmailValidator < ActiveModel::EachValidator
   def validate_each(record, attribute, value)
     allowed_emails = []
     allowed_emails << /^[A-Z0-9]+@grinnell\.edu\z/i
-    allowed_emails << /A[^@\s]+@central\.edu\z/i
-    allowed_emails << /A[^@\s]+@dmu\.edu\z/i
-    allowed_emails << /A[^@\s]+@drake\.edu\z/i
-    allowed_emails << /A[^@\s]+@iastate\.edu\z/i
-    allowed_emails << /A[^@\s]+@mercydesmoines\.org\z/i
-    allowed_emails << /A[^@\s]+@mchs\.org\z/i
-    allowed_emails << /A[^@\s]+@uiowa\.edu\z/i
-    allowed_emails << /A[^@\s]+@uni\.edu\z/i
-    allowed_emails << /A[^@\s]+@wmpenn\.edu\z/i
+    allowed_emails << /^[A-Z0-9]+@central\.edu\z/i
+    allowed_emails << /^[A-Z0-9]+@dmu\.edu\z/i
+    allowed_emails << /^[A-Z0-9]+@drake\.edu\z/i
+    allowed_emails << /^[A-Z0-9]+@iastate\.edu\z/i
+    allowed_emails << /^[A-Z0-9]+@mercydesmoines\.org\z/i
+    allowed_emails << /^[A-Z0-9]+@mchs\.org\z/i
+    allowed_emails << /^[A-Z0-9]+@uiowa\.edu\z/i
+    allowed_emails << /^[A-Z0-9]+@uni\.edu\z/i
+    allowed_emails << /^[A-Z0-9]+@wmpenn\.edu\z/i
     valid_regexp = Regexp.union(allowed_emails)
     unless value =~ valid_regexp
       record.errors[attribute] << (options[:message] || "is not from a consortium member institution")
