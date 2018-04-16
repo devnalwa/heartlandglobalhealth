@@ -20,6 +20,20 @@ class UsersController < ApplicationController
   def profile
     @user = User.find(current_user.id)
   end
+  
+  def edit
+    @user = User.find(current_user.id)
+  end
+  
+  def update
+    @user = User.find(current_user.id)
+    if @user.save
+        #
+    else 
+        # if update is unsuccessful
+    end
+    redirect_to profile_path
+  end
 
   def members
     if params[:query]
