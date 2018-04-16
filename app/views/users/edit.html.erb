@@ -1,0 +1,67 @@
+<% provide(:title, @user.name) %>
+<div class="row">
+    <div class="col-md-2">
+        <img src="/assets/HeartlandLogo.ico" class="image-fluid"  alt="Heartland Global Health">
+    </div>
+    <div class="col-md-3">    
+        <div class="table-responsive">
+        <table class="table table-condensed table-responsive table-user-information">
+            <tbody>
+                <tr>
+                    <td>
+                        <strong>
+                            Name
+                        </strong>
+                    </td>
+                    <td>
+                        <%= @user.name %>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <strong>
+                            School
+                        </strong>
+                    </td>
+                    <td>
+                        <%= @user.school %>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <strong>
+                            Email
+                        </strong>
+                    </td>
+                    <td>
+                        <%= @user.email %>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <%= form_for(@user) do |f| %>
+        <%= render 'shared/error_messages', object: @user %>
+        
+        <div class="form-group">
+          <%= f.label :password, "Your Password" %>
+          <%= f.text_field :password, class: "form-control" %>
+        </div>
+        
+        <div class="form-group">
+          <%= f.label :tags, "Your Tags" %>
+          <%= f.text_field :research, class: "form-control" %>
+        </div>
+        
+        <div class="form-group">
+          <%= f.label :research, "Your Research Interests" %>
+          <%= f.text_field :research, class: "form-control" %>
+        </div>
+        
+        <%= f.submit "Submit", class: "btn btn-outline-info mr-sm-2" %>
+    <% end %>
+</div>
