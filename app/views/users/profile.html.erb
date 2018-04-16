@@ -1,67 +1,61 @@
 <% provide(:title, @user.name) %>
-<div class="row">
-    <div class="col-md-2">
-        <img src="/assets/HeartlandLogo.ico" class="image-fluid"  alt="Heartland Global Health">
+<!DOCTYPE html>
+<head>
+</head>
+<html lang="en">
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-5" align="right">
+            <img src="/assets/HeartlandLogo.ico" class="image-fluid"  alt="Heartland Global Health">
+        </div>
+        <div class="col" align="left">    
+            <div class="table-responsive">
+            <table class="table table-condensed table-responsive table-user-information table-nonfluid">
+                <tbody>
+                    <tr>
+                        <td><strong>Name</strong></td>
+                        <td ><%= @user.name %></td>
+                    </tr>
+                    <tr>
+                        <td><strong>School</strong></td>
+                        <td><%= @user.school %></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Email</strong></td>
+                        <td><%= @user.email %></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Tags</strong></td>
+                        <td><%= @user.research %></td>
+                    </tr>
+                </tbody>
+            </table>
+            </div>
+        </div>
     </div>
-    <div class="col-md-3">    
-        <div class="table-responsive">
-        <table class="table table-condensed table-responsive table-user-information">
-            <tbody>
-                <tr>
-                    <td>
+    <div class="row">
+         <div class="col" align="center">    
+            <div class="table-responsive" >
+            <table class="table table-condensed table-responsive table-user-information table-nonfluid">
+                <tbody>
+                    <tr>
+                        <td>
                         <strong>
-                            Name
+                            Research
                         </strong>
+                        </td>
+                    </tr>    
+                        
+                    <tr>
+                        <td>
+                        <%= @user.research %>
                     </td>
-                    <td>
-                        <%= @user.name %>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <strong>
-                            School
-                        </strong>
-                    </td>
-                    <td>
-                        <%= @user.school %>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <strong>
-                            Email
-                        </strong>
-                    </td>
-                    <td>
-                        <%= @user.email %>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
+                    </tr>
+                </tbody>
+            </table>
+            <%= link_to "Edit", edit_user_path(@user.id), class: "btn btn-outline-info mr-sm-2" %>
+            </div>
         </div>
     </div>
 </div>
-<div class="row">
-     <div class="col">    
-        <div class="table-responsive">
-        <table class="table table-condensed table-responsive table-user-information">
-            <tbody>
-                <tr>
-                    <td>
-                    <strong>
-                        Paragraph
-                    </strong>
-                    </td>
-                </tr>    
-                    
-                <tr>
-                    <td>
-                    This is where a paragraph should be displayed.
-                </td>
-                </tr>
-            </tbody>
-        </table>
-        </div>
-    </div>
-</div>
+</html>
