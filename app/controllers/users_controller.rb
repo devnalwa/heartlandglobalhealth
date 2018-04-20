@@ -3,10 +3,6 @@ class UsersController < ApplicationController
     #@user = User.find(current_user.id)
     @user = User.find(params[:id])
   end
-  
-  def profile
-    @user = User.find(current_user.id)
-  end
 
   def new
     @user = User.new
@@ -21,10 +17,10 @@ class UsersController < ApplicationController
      end
   end
   
-  def edit
-    @user = User.find(1)
+  def profile
+    @user = User.find(current_user.id)
   end
-  
+
   def members
     if params[:query]
       @users = User.search(params[:query])
@@ -33,10 +29,13 @@ class UsersController < ApplicationController
     end
   end
   
+  def edit
+    @user = User.find(current_user.id)
+  end
+  
   def update
     @user = User.find(params[:id])
     if @user.update_attributes(user_params)
-      # Handle a successful update.
     else
       render 'edit'
     end
