@@ -4,6 +4,7 @@
       <div class="m-1">
         <span class="text-muted"><%= post.created_at.strftime("%D") %></span>
         <%= post.content.html_safe %>
+        <p><%= link_to "Delete", post, :confirm => "Are you sure?", :method => :delete  %></p>
       </div>
     </div>
   <% end %>

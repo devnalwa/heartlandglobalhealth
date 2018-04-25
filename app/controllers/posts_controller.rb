@@ -21,6 +21,12 @@ class PostsController < ApplicationController
   def index
     @posts = Post.all
   end
+  
+  def destroy
+    @post = Post.find(params[:id])
+    @post.destroy
+    redirect_to posts_path, :notice => "Event has been deleted"
+  end
 
   private
   def post_params
