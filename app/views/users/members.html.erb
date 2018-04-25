@@ -1,23 +1,5 @@
 <% provide(:title, "Members") %>
 
-
-  <h2> Members</h2>
-  
-  
-<div class="my-3">
-  <%= form_tag(members_path, :method => "get", id: "search-form") do %>
-    <div class="input-group">
-      <%= text_field_tag :query, params[:query], placeholder: "Find Researchers", class: "form-control" %>
-      <span id="input-group-btn">
-        <%= submit_tag "Search", class: "btn btn-primary" %>
-      </span>
-    </div>
-  <% end %>
-</div>
-
-
-
-
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -25,10 +7,30 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <link rel="stylesheet" href="https://cdn.datatables.net/1.10.16/css/dataTables.bootstrap4.min.css>
 <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.css">
+
   
 <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.js"></script>
 </head>
 <body>
+
+<div id="title">
+  <h2>Members</h2>
+  </div>
+  
+<div id="main">
+<div class="my-3", action="/action_page.php" style="margin:auto;max-width:1300px">
+  <%= form_tag(members_path, :method => "get", id: "search-form") do %>
+  <div class="col-sm-12                                                                                                                                                                                                                    text-center">
+    <div class="input-group">
+      <%= text_field_tag :query, params[:query], placeholder: "Find Researchers", class: "form-control" %>
+      <span id="input-group-btn">
+        <%= submit_tag "Search", class: "btn btn-primary" %>
+      </span>
+    </div>
+    </div>
+  <% end %>
+</div>
+
 
 
 <div class="container">
@@ -55,6 +57,9 @@
   </table>
   </div>
 </div>
+</div>
+
+
 
 
 </body>
