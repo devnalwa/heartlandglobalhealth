@@ -1,5 +1,6 @@
 class MemberEmailValidator < ActiveModel::EachValidator
   def validate_each(record, attribute, value)
+    #This is an array of emails that are allowed. YOu have to be from a memember school to sign up on this site
     allowed_emails = []
     allowed_emails << /^[A-Z0-9]+@grinnell\.edu\z/i
     allowed_emails << /^[A-Z0-9]+@central\.edu\z/i

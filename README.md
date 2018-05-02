@@ -42,6 +42,8 @@ Quick Rundown of each controller and their methods:
     
     create - creates a new user, if it saves then it redirects to the user's page, else it renders the 'new' link
     
+    profile - Ensures that the signed in user will go to their profile page when they click on the profile button
+    
     members - can search for a member given a :query. If search fails then we show all users
   
   
@@ -50,4 +52,3 @@ Quick Rundown of each controller and their methods:
     A controller for the payment system using stripe. I will not fill this out since we are not focuisng on this aspect of our system
   
   
-Minimal testing has been implemented. Basic testing that should always be passed. 
