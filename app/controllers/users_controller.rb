@@ -19,7 +19,11 @@ class UsersController < ApplicationController
   def profile
     @user = User.find(current_user.id)
   end
-
+  
+  def edit
+    @user = User.find(current_user.id)
+  end
+  
   def members
     if params[:query]
       @users = User.search(params[:query])

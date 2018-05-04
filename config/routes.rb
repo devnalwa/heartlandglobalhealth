@@ -7,8 +7,10 @@ Rails.application.routes.draw do
     get '/members', to: 'users#members'
     get '/info', to: 'static_pages#conference_info'
     get '/users', to: 'users#show'
-    post '/edit', to: 'users#edit'
     get '/profile', to: 'users#profile'
+    get '/edit', to: 'users#edit'
+    post '/edit', to: 'users#update'
+
     
     devise_for :users, :controllers => { :registrations => "users/registrations" }
     root 'static_pages#home'
