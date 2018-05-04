@@ -24,19 +24,16 @@
                         <td><strong>Email</strong></td>
                         <td><%= @user.email %></td>
                     </tr>
-                    <tr>
-                        <td><strong>Tags</strong></td>
-                        <td><%= @user.research %></td>
-                    </tr>
                 </tbody>
             </table>
             </div>
         </div>
     </div>
     <div class="row">
-         <div class="col-10" align="center">    
+        <div class="col-sm-3"></div>
+         <div class="col" align="center">    
             <div class="table-responsive" >
-            <table class="table table-condensed table-responsive table-user-information table-nonfluid">
+            <table class="table table-condensed table-responsive table-user-information table-fluid">
                 <tbody>
                     <tr>
                         <td>
@@ -45,7 +42,6 @@
                         </strong>
                         </td>
                     </tr>    
-                        
                     <tr>
                         <td>
                         <%= @user.research %>
@@ -53,9 +49,10 @@
                     </tr>
                 </tbody>
             </table>
-            <%= link_to "Edit Profile", edit_user_path(@user.id), class: "btn btn-outline-info mr-sm-2", if user_signed_in? && current_user == @user %>
+            <%= link_to "Edit Profile", edit_user_path(@user.id), class: "btn btn-outline-info mr-sm-2" %>
             </div>
         </div>
+        <div class="col-sm-3"></div>
     </div>
 </div>
 </html>
