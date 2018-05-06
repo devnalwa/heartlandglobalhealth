@@ -1,7 +1,6 @@
 class StaticPagesController < ApplicationController
   def home
-    @post1 = Post.last
-    @post2 = Post.second_to_last
+    @consortiumFrontPage = Consortium.last
   end
 
   def about

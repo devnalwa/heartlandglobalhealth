@@ -10,8 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(version: 20180502201905) do
+ActiveRecord::Schema.define(version: 20180506181811) do
 
   create_table "articles", force: :cascade do |t|
     t.string "title"
@@ -19,9 +18,16 @@ ActiveRecord::Schema.define(version: 20180502201905) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
-=======
-ActiveRecord::Schema.define(version: 20180504191817) do
->>>>>>> bc0d52443036cac6355f9a75e00aad7b9f015eaf
+
+  create_table "consortia", force: :cascade do |t|
+    t.string "name"
+    t.string "sub"
+    t.string "date"
+    t.string "time"
+    t.string "location"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "posts", force: :cascade do |t|
     t.text "content"
