@@ -50,15 +50,21 @@
                 <tr>
                     <td>
                     <strong>
-                        Paragraph
+                        About my research
                     </strong>
                     </td>
                 </tr>    
                     
                 <tr>
                     <td>
-                    This is where a paragraph should be displayed.
+                    <%= @user.research %>
                 </td>
+                </tr>
+                <tr>
+                    <td>
+                        <%= link_to "Delete Account", @user, method: :delete,
+                                  data: { confirm: "You sure?" } %>
+                    </td>
                 </tr>
             </tbody>
         </table>
