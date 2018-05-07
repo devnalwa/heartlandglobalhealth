@@ -15,6 +15,9 @@ How to actually run this Git Repo on your C9 Workspace.
 11. Go the share button in the top right corner to find your Application link
 12. Open that link and the website will appear 
 
+
+Here is the actual website: https://www.heartlandglobalhealth.org/
+
 Quick Rundown of each controller and their methods: 
 
 1. Posts_Controller :
@@ -32,7 +35,7 @@ Quick Rundown of each controller and their methods:
   
 2. static_pages_controller: 
 
-    home - creates a post1 and post2 variables. Post1 is the last post made, post2 is the second to last post made
+    Only comes with default methods
   
   
 3. users_controller : 

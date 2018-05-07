@@ -1,0 +1,37 @@
+
+<%= form_for @consortium do |f| %>
+    <div>
+        <%= f.label :name %>
+    </div>
+    <div>
+        <%= f.text_field :name %>
+    </div>
+    <div>
+        <%= f.label :sub %>
+    </div>
+    <div>
+        <%= f.text_area :sub, rows: 5 %>
+    </div>
+    <div>
+        <%= f.label :date %>
+    </div>
+    <div>
+        <%= f.text_area :date %>
+    </div>
+    <div>
+        <%= f.label :time %>
+    </div>
+    <div>
+        <%= f.text_area :time %>
+    </div>
+    <div>
+        <%= f.label :location %>
+    </div>
+    <div>
+        <%= f.text_area :location %>
+    </div>
+    <div>
+        <%= f.submit %>
+    </div>
+<% end %>
+    

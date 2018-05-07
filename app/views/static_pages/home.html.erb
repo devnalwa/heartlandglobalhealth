@@ -3,37 +3,27 @@
     <div class="row-fluid">
       <h1>&nbsp</h1>
       <!---Current Conference Information--->
-      <h1 class="conference-name">The Heartland Global Health Consortium</h1>
-      <h1 class="other-text">10th Annual Global Health Conference</h1>
-      <p class="other-text">October 13, 2017</p>
-      <p class="other-text">9 a.m. - 3 p.m.</p>
-      <p class="other-text">Drake University, Olmsted Center, Des Moines, IA US</p>
+      <h1 class="conference-name"><%= @consortiumFrontPage.name.html_safe if not @consortiumFrontPage == nil  %></h1>
+      <h1 class="other-text"><%= @consortiumFrontPage.sub.html_safe if not @consortiumFrontPage == nil %></h1>
+      <p class="other-text"><%= @consortiumFrontPage.date.html_safe if not @consortiumFrontPage == nil %></p>
+      <p class="other-text"><%= @consortiumFrontPage.time.html_safe if not @consortiumFrontPage == nil %></p>
+      <p class="other-text"><%= @consortiumFrontPage.location.html_safe if not @consortiumFrontPage == nil %></p>
       <div class="container">
         <!---Registration and Information Button--->
         <div class="row justify-content-center">
           <%= link_to "Register", "https://cme.dmu.edu/HGHC2017#group-tabs-node-course-default4", class: "btn btn-outline-light  mr-sm-2", role: "button"%>
           <%= link_to "Learn more", "https://cme.dmu.edu/HGHC2017#group-tabs-node-course-default1", class: "btn btn-outline-light  mr-sm-2", role: "button" %>
+          <% if user_signed_in? %>
+          <% if current_user.email == "queathem@grinnell.edu" %>
+          <%= link_to "Change HomePage event", consortia_path, class: "btn btn-outline-light  mr-sm-2", role: "button" %>
+          <% end %>
+          <% end %>
         </div>
       </div>
     </div>
     </div>
     </div>
-<<<<<<< HEAD
-    <div class="container posts">
-      <div class="row post-height">
-        <!-- This is the last two posts from the posts page -->
-        <div class="col-sm-12 post-text">
-          <%= @post1.content.html_safe if not @post1.nil? %>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-sm-12 post-text">
-        <%= @post2.content.html_safe if not @post2.nil? %>
-        </div>
-      </div>
-    </div>
-=======
->>>>>>> bc0d52443036cac6355f9a75e00aad7b9f015eaf
+
     <!---Youtube Content--->
     
     <div class="youtube">

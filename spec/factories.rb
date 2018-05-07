@@ -1,4 +1,11 @@
 FactoryBot.define do
+  factory :consortium do
+    name "MyString"
+    sub "MyString"
+    date "MyString"
+    time "MyString"
+    location "MyString"
+  end
   factory :article do
     title "MyString"
     body "MyText"

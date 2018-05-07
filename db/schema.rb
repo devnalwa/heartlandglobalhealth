@@ -10,7 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180504191817) do
+ActiveRecord::Schema.define(version: 20180506181811) do
+
+  create_table "consortia", force: :cascade do |t|
+    t.string "name"
+    t.string "sub"
+    t.string "date"
+    t.string "time"
+    t.string "location"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "posts", force: :cascade do |t|
     t.text "content"
