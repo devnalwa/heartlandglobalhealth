@@ -45,7 +45,13 @@
                     <tr>
                         <td>
                         <%= @user.research %>
-                    </td>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                        <%= link_to "Delete Account", @user, method: :delete,
+                                  data: { confirm: "You sure?" } %>
+                        </td>
                     </tr>
                 </tbody>
             </table>
@@ -55,4 +61,3 @@
         <div class="col-sm-3"></div>
     </div>
 </div>
-</html>

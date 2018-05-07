@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :articles
   devise_scope :user do
     get '/users/sign_out' => 'devise/sessions#destroy'
     get '/about', to: 'static_pages#about'
@@ -10,7 +11,7 @@ Rails.application.routes.draw do
     get '/profile', to: 'users#profile'
     get '/edit', to: 'users#edit'
     post '/edit', to: 'users#update'
-
+    get '/wow', to: 'article#index'
     
     devise_for :users, :controllers => { :registrations => "users/registrations" }
     root 'static_pages#home'

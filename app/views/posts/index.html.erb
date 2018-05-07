@@ -1,10 +1,32 @@
 <div class="container">
-  <% for post in @posts %>
-    <div class="card">
-      <div class="m-1">
-        <span class="text-muted"><%= post.created_at.strftime("%D") %></span>
-        <%= post.content.html_safe %>
-      </div>
-    </div>
-  <% end %>
+  <div class="table-responsive">          
+  <table class="table">
+    <thead>
+       <tr>
+        <th>Event</th>
+        <th>Posted</th>
+        <% if user_signed_in? %>
+        <th></th>
+        <% end %>
+      </tr>
+    </thead>
+    <tbody>
+      <% @posts.each do |post| %>
+      <tr>
+        <td><%=link_to post.content.html_safe, post, class: "card-link"%></td>
+        <td><%= post.created_at.strftime("%D") %></td>
+        <% if user_signed_in? %>
+        <td><%= link_to "Delete", post, :confirm => "Are you sure?", :method => :delete  %></td>
+        <% end %>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+  </div>
 </div>
+</div>
+
+
+
+
+</body>

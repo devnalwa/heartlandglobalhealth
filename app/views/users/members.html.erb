@@ -1,26 +1,78 @@
 <% provide(:title, "Members") %>
 
-<div class="my-3">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.10.16/css/dataTables.bootstrap4.min.css>
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.css">
+
+  
+<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.js"></script>
+</head>
+<body>
+
+<div id="title">
+  <h2>Members</h2>
+  </div>
+  
+<div id="main">
+<div class="my-3", action="/action_page.php" style="margin:auto;max-width:1300px">
   <%= form_tag(members_path, :method => "get", id: "search-form") do %>
+  <div class="col-sm-12                                                                                                                                                                                                                    text-center">
     <div class="input-group">
       <%= text_field_tag :query, params[:query], placeholder: "Find Researchers", class: "form-control" %>
       <span id="input-group-btn">
         <%= submit_tag "Search", class: "btn btn-primary" %>
       </span>
     </div>
+    </div>
   <% end %>
 </div>
 
-<% @users.each do |user| %>
-  <div class="card">
-    <div class="card-body">
-     <h4 class="card-title"><%= user.name %></h4>
-      <% if user_signed_in? %>
-        <h6 class="card-subtitle mb-2 text-muted"><%= user.email %></h6>
+
+
+<div class="container">
+  <div class="table-responsive">          
+  <table class="table">
+    <thead>
+       <tr>
+        <th>Name</th>
+        <th>Institution</th>
+        <th>Email</th>
+        <th>Research</th>
+        <% if user_signed_in? %>
+        <% if current_user.email == "queathem@grinnell.edu" %>
+          <th></th>
+        <% end %>
+        <% end %>
+      </tr>
+    </thead>
+    <tbody>
+      <% @users.each do |user| %>
+      <tr>
+        <td><%=link_to "#{user.name}", user, class: "card-link"%></td>
+        <td><%=user.school %></td>
+        <td><%=mail_to "#{user.email}"  %></td>
+        <td><%=user.research %></td>
+        <% if user_signed_in? %>
+        <% if current_user.email == "queathem@grinnell.edu" %>
+          <td>
+          <%= link_to "Delete", @user, method: :delete,
+                                  data: { confirm: "You sure?" } %>
+          </td>
+        <% end %>
+        <% end %>
+      </tr>
       <% end %>
-      <p class="card-text"><%= user.school %></p>
-      <p class="card-text"><%= user.research %></p>
-      <%= link_to "#{user.name}'s page", user, class: "card-link" %>
-    </div>
+    </tbody>
+  </table>
   </div>
-<% end %>
+</div>
+</div>
+
+
+
+
+</body>

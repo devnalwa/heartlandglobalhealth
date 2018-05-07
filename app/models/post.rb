@@ -4,6 +4,7 @@
 # that doesn't match a whitelist from posts
 
 class Post < ApplicationRecord
+  belongs_to :user, optional: true
   before_save { self.content = sanitize_content(self.content) }
   default_scope -> { order(created_at: :desc) }
   validates :content, presence: true
