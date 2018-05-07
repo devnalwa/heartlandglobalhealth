@@ -47,15 +47,10 @@
                         <%= @user.research %>
                         </td>
                     </tr>
-                    <tr>
-                        <td>
-                        <%= link_to "Delete Account", @user, method: :delete,
-                                  data: { confirm: "You sure?" } %>
-                        </td>
-                    </tr>
                 </tbody>
             </table>
             <%= link_to "Edit Profile", edit_user_path(@user.id), class: "btn btn-outline-info mr-sm-2" %>
+            <%= link_to "Delete Account", @user, method: :delete, data: { confirm: "You sure?" }, class: "btn btn-outline-info mr-sm-2" %>
             </div>
         </div>
         <div class="col-sm-3"></div>
