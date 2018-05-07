@@ -26,11 +26,17 @@ class ConsortiaController < ApplicationController
     
     def update
         @consortium = Consortium.find(params[:id])
-        if @consortium.update_attributes(article_params)
+        if @consortium.update_attributes(consortium_params)
             redirect_to consortia_path, notice: "The Consortium has been successfully updated."
         else 
             render action: "edit"
         end
+    end
+    
+    def destroy
+        @consortium = Consortium.find(params[:id])
+        @consortium.destroy
+        redirect_to consortia_path, :notice => "Event has been deleted."
     end
     
     private
