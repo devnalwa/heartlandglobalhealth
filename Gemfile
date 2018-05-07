@@ -21,6 +21,7 @@ gem 'uglifier',        '3.2.0'
 gem 'webpacker',       '3.0.2'
 gem 'devise',          '~> 4.2'
 gem 'stripe'
+gem 'ckeditor'
 
 group :development, :test do
   gem 'sqlite3',     '1.3.13'
