@@ -11,8 +11,8 @@
       <div class="container">
         <!---Registration and Information Button--->
         <div class="row justify-content-center">
-          <%= link_to "Register", "https://cme.dmu.edu/HGHC2017#group-tabs-node-course-default4", class: "btn btn-outline-light  mr-sm-2", role: "button"%>
-          <%= link_to "Learn more", "https://cme.dmu.edu/HGHC2017#group-tabs-node-course-default1", class: "btn btn-outline-light  mr-sm-2", role: "button" %>
+          <%= link_to "Register", "https://cme.dmu.edu/HGHC2017#group-tabs-node-course-default4", class: "btn btn-outline-light  mr-sm-2", role: "button" if not @consortiumFrontPage == nil %>
+          <%= link_to "Learn more", "https://cme.dmu.edu/HGHC2017#group-tabs-node-course-default1", class: "btn btn-outline-light  mr-sm-2", role: "button" if not @consortiumFrontPage == nil  %>
           <% if user_signed_in? %>
           <% if current_user.email == "queathem@grinnell.edu" %>
           <%= link_to "Change HomePage event", consortia_path, class: "btn btn-outline-light  mr-sm-2", role: "button" %>

@@ -40,12 +40,6 @@
         <th>Name</th>
         <th>Institution</th>
         <th>Email</th>
-        <th>Research</th>
-        <% if user_signed_in? %>
-        <% if current_user.email == "queathem@grinnell.edu" %>
-          <th></th>
-        <% end %>
-        <% end %>
       </tr>
     </thead>
     <tbody>
@@ -53,16 +47,7 @@
       <tr>
         <td><%=link_to "#{user.name}", user, class: "card-link"%></td>
         <td><%=user.school %></td>
-        <td><%=mail_to "#{user.email}"  %></td>
-        <td><%=user.research %></td>
-        <% if user_signed_in? %>
-        <% if current_user.email == "queathem@grinnell.edu" %>
-          <td>
-          <%= link_to "Delete", @user, method: :delete,
-                                  data: { confirm: "You sure?" } %>
-          </td>
-        <% end %>
-        <% end %>
+        <td><%=mail_to "#{user.email}"  %></td>  
       </tr>
       <% end %>
     </tbody>
