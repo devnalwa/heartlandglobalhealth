@@ -19,12 +19,31 @@ class UsersController < ApplicationController
   def profile
     @user = User.find(current_user.id)
   end
-
+  
+  def edit
+    @user = User.find(current_user.id)
+  end
+  
   def members
     if params[:query]
       @users = User.search(params[:query])
     else
       @users = User.all
+    end
+  end
+  
+  def edit
+    @user = User.find(current_user.id)
+  end
+  
+  def update
+    @user = User.find(current_user.id)
+    if @user.update_attributes(user_params)
+      sign_in(@user, :bypass => true)
+      flash[:success] = "Profile updated"
+      redirect_to @user
+    else
+      render 'edit'
     end
   end
 

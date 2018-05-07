@@ -1,0 +1,60 @@
+<% provide(:title, @user.name) %>
+<!DOCTYPE html>
+<head>
+</head>
+<html lang="en">
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-5" align="right">
+            <img src="/assets/HeartlandLogo.ico" class="image-fluid"  alt="Heartland Global Health">
+        </div>
+        <div class="col" align="left">    
+            <div class="table-responsive">
+            <table class="table table-condensed table-responsive table-user-information table-nonfluid">
+                <tbody>
+                    <tr>
+                        <td><strong>Name</strong></td>
+                        <td ><%= @user.name %></td>
+                    </tr>
+                    <tr>
+                        <td><strong>School</strong></td>
+                        <td><%= @user.school %></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Email</strong></td>
+                        <td><%= @user.email %></td>
+                    </tr>
+                </tbody>
+            </table>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container">
+<div class="row">
+  <div class="col-md-2"></div>
+  <div class="col-md-8">
+    <%= form_for(@user) do |f| %>
+        <%= render 'shared/error_messages', object: @user %>
+        
+        <div class="form-group">
+          <%= f.label :password, "New Password" %>
+          <%= f.password_field :password, class: "form-control input"%>
+        </div>
+        
+        <div class="form-group">
+            <%= f.label :password_confirmation, "Password Confirmation" %>
+            <%= f.password_field :password_confirmation, class: "form_control input" %>
+        </div>
+
+        <div class="form-group">
+          <%= f.label :research, "Your Research Interests" %>
+          <%= f.text_area :research, rows: "10", class: "form-control" %>
+        </div>
+        
+        <%= f.submit "Submit", class: "btn btn-outline-info mr-sm-2" %>
+    <% end %>
+  </div>
+  <div class="col-md-2"></div>
+</div>
+</div>

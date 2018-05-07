@@ -9,8 +9,10 @@ Rails.application.routes.draw do
     get '/info', to: 'static_pages#conference_info'
     get '/users', to: 'users#show'
     get '/profile', to: 'users#profile'
+    get '/edit', to: 'users#edit'
+    post '/edit', to: 'users#update'
     get '/wow', to: 'article#index'
-
+    
     devise_for :users, :controllers => { :registrations => "users/registrations" }
     root 'static_pages#home'
     resources :users
