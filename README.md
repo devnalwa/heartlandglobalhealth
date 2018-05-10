@@ -54,5 +54,11 @@ Quick Rundown of each controller and their methods:
 4. Charges_controller: 
 
     A controller for the payment system using stripe. I will not fill this out since we are not focuisng on this aspect of our system
+    
+5. consortia_controller: 
+    
+    This controller makes events that will appear on the frontpage. Specifically, the last consortium created will be the one displayed on the front page
+    New, create, show, edit, update, and index all do what you expect them to do. 
+    consortium_params requires each of the attributes to have a value, if not an error will be thrown
   
   
