@@ -12,7 +12,6 @@
 //
 
 //= require jquery_ujs 
-//= require ckeditor/init
 //= require rails-ujs
 //= require turbolinks
 //= require jquery3
