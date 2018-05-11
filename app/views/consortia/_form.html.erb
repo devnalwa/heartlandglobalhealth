@@ -1,37 +1,28 @@
 
 <%= form_for @consortium do |f| %>
-    <div>
-        <%= f.label :name %>
+    <div class="form-group">
+        <strong><%= f.label :name, "Name: "%></strong>
+        <%= f.text_area :name, cols: "100", rows: "1"%>
     </div>
-    <div>
-        <%= f.text_field :name %>
+    <div class="form-group">
+        <strong><%= f.label :sub, "Description: "%></strong>
+        <%= f.text_area :sub, cols: "100", rows: "4"%>
     </div>
-    <div>
-        <%= f.label :sub %>
+    <div class="form-group">
+        <strong><%= f.label :date, "Date: "%></strong>
+        <%= f.text_area :date, cols: "100", rows: "1"%>
     </div>
-    <div>
-        <%= f.text_area :sub, rows: 5 %>
+    <div class="form-group">
+        <strong><%= f.label :time, "Time: " %></strong>
+        <%= f.text_area :time, cols: "100", rows: "1"%>
     </div>
-    <div>
-        <%= f.label :date %>
+    <div class="form-group">
+        <strong><%= f.label :location, "Location: "%></strong>
+        <%= f.text_area :location, cols: "100", rows: "1"%>
     </div>
-    <div>
-        <%= f.text_area :date %>
-    </div>
-    <div>
-        <%= f.label :time %>
-    </div>
-    <div>
-        <%= f.text_area :time %>
-    </div>
-    <div>
-        <%= f.label :location %>
-    </div>
-    <div>
-        <%= f.text_area :location %>
-    </div>
-    <div>
-        <%= f.submit %>
+    
+    <div align="center">
+        <%= f.submit "Submit", class: "btn btn-outline-info mr-sm-2"%>
     </div>
 <% end %>
     
